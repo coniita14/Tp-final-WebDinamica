@@ -1,0 +1,315 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "Yerbapedia API",
+  "collectionId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+  "dateExported": "2026-11-03T03:30:00.000Z",
+  "version": "1.2",
+  "folders": [],
+  "requests": [
+    {
+      "_id": "5c7d586a-4e02-4979-90cb-551884cbb937",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "01 Listar todas",
+      "url": "http://127.0.0.1:8000/api/yerbas",
+      "method": "GET",
+      "sortNum": 10000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "5a00c9fa-d3f0-426d-93a1-dd4ccb747ee5",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "02 Ver una (existe)",
+      "url": "http://127.0.0.1:8000/api/yerbas/1",
+      "method": "GET",
+      "sortNum": 20000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "020516b2-e75e-4318-adae-a61582054765",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "03 Ver una (no existe)",
+      "url": "http://127.0.0.1:8000/api/yerbas/999",
+      "method": "GET",
+      "sortNum": 30000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "404"
+        }
+      ]
+    },
+    {
+      "_id": "6a1963fe-73a9-4f15-9a93-a3ea2ed616c4",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "04 Crear (datos válidos)",
+      "url": "http://127.0.0.1:8000/api/yerbas",
+      "method": "POST",
+      "sortNum": 40000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "201"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"Mañanita Suave\",\n  \"marca\": \"Mañanita\",\n  \"tipo\": \"suave\",\n  \"origen\": \"Misiones\",\n  \"precio\": 4300,\n  \"puntaje\": 6,\n  \"con_palo\": true,\n  \"fecha_prueba\": \"2026-10-15\",\n  \"descripcion\": \"Rinde bien\"\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "f758305d-7ba7-4179-9439-4127d0b08bae",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "05 Crear (vacío)",
+      "url": "http://127.0.0.1:8000/api/yerbas",
+      "method": "POST",
+      "sortNum": 50000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "422"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{}",
+        "form": []
+      }
+    },
+    {
+      "_id": "04a812c1-b93a-4200-b007-2f7725f38615",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "06 Crear (datos inválidos)",
+      "url": "http://127.0.0.1:8000/api/yerbas",
+      "method": "POST",
+      "sortNum": 60000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "422"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"X\",\n  \"marca\": \"Y\",\n  \"tipo\": \"de mango\",\n  \"origen\": \"Z\",\n  \"precio\": -5,\n  \"puntaje\": 15,\n  \"con_palo\": \"tal vez\",\n  \"fecha_prueba\": \"2030-01-01\"\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "657a7cf8-34c6-49ef-b4c7-08b0cb71de49",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "07 Actualizar (válido)",
+      "url": "http://127.0.0.1:8000/api/yerbas/9",
+      "method": "PUT",
+      "sortNum": 70000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"precio\": 4500,\n  \"puntaje\": 7\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "430d6e18-3f33-4680-a2d8-5a2be2a90084",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "08 Actualizar (inválido)",
+      "url": "http://127.0.0.1:8000/api/yerbas/9",
+      "method": "PUT",
+      "sortNum": 80000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "422"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"puntaje\": \"diez\"\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "9af3bef3-25d4-41e5-a3db-1d6cc3919d62",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "09 Actualizar (no existe)",
+      "url": "http://127.0.0.1:8000/api/yerbas/999",
+      "method": "PUT",
+      "sortNum": 90000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "404"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"puntaje\": 5\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "9eab5606-a6b6-480d-951f-482193349afb",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "10 Borrar (existe)",
+      "url": "http://127.0.0.1:8000/api/yerbas/9",
+      "method": "DELETE",
+      "sortNum": 100000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "200"
+        }
+      ]
+    },
+    {
+      "_id": "65960ab5-2a71-4016-8dd1-6158366e177e",
+      "colId": "8da7e88d-d527-4f51-81c3-715e95d1f5d0",
+      "containerId": "",
+      "name": "11 Borrar (ya borrada)",
+      "url": "http://127.0.0.1:8000/api/yerbas/9",
+      "method": "DELETE",
+      "sortNum": 110000,
+      "created": "2026-11-03T03:30:00.000Z",
+      "modified": "2026-11-03T03:30:00.000Z",
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "tests": [
+        {
+          "type": "res-code",
+          "custom": "",
+          "action": "equal",
+          "value": "404"
+        }
+      ]
+    }
+  ]
+}

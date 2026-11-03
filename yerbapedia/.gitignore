@@ -1,0 +1,11 @@
+# Dependencias (se instalan con composer install / npm install)
+api/vendor/
+web/node_modules/
+
+# Configuración con datos privados
+api/.env
+web/.env.local
+
+# Base de datos local y archivos generados
+api/database/*.sqlite
+web/.next/
